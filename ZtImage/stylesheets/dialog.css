@@ -11,11 +11,13 @@
 
 .def-text{color: #f1f1f1; font: 300 14px/15px 'Microsoft YaHei'; cursor: default}
 
+.tool-text{color: #f1f1f1; font: 300 12px/15px 'Microsoft YaHei'; cursor: default}
 
 /* ui effect */
 .drag{position: absolute}
 
 .drop{position: relative}
+
 
 
 
@@ -31,13 +33,19 @@
 
 /* tool area */
 
-.toolBox{width: 100%; height: 100%; float: left}
+.toolBox{width: 100%; height: 900px; float: left}
 
-.toolBox .logo{float: right; margin-right: 10px}
+.toolBox .logo{float: right; margin-right: 10px; border-radius: 2px}
 
-.function-group{ float: left; width: 100%; height: 900px; margin: 20px 0px 0px 2px}
+.function-group{ float: left; width: 96%;  margin: 10px 0px 0px 0px}
 
-.function-group-el{list-style-type: none; float: left; margin: 5px}
+.function-group-el{list-style-type: none; float: left; margin: 5px; width: 20px; height: 20px; display: inline}
+
+.function-group-el img{border-radius: 2px;}
+
+.function-group-el img:hover{border:1px solid #40c7ff}
+
+.function-group-el img.selected{border:1px solid #40c7ff}
 
 
 
