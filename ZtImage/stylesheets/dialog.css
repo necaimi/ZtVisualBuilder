@@ -7,17 +7,23 @@
 
 .topArea{width: 100%; height: 20px; background-color:#3c3f41;}
 
+.rightArea{width: 100%; height: 100%; float: left; display: inline; padding: 10px}
+
 .defbackground{background-color: #3c3f41}
 
 .def-text{color: #f1f1f1; font: 300 14px/15px 'Microsoft YaHei'; cursor: default}
 
 .tool-text{color: #f1f1f1; font: 300 12px/15px 'Microsoft YaHei'; cursor: default}
 
+
+
+
 /* ui effect */
 .drag{position: absolute}
 
 .drop{position: relative}
 
+/* animate */
 
 
 
@@ -48,6 +54,10 @@
 .function-group-el img.selected{border:1px solid #40c7ff}
 
 
+/* show area */
+.edit-box{width: 100%; height: 100%}
+
+.edit-box .compoment{}
 
 /* color style */
 
