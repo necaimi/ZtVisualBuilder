@@ -1,0 +1,4 @@
+{
+    "skulist":{"dir":"./skulist/main.js", "type":"sku_list"},
+    "titleTool":{"dir":"./titleTool/main.js", "type":"title_tool"}
+}
