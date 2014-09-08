@@ -1,7 +1,10 @@
 /* eni layout */
 
 *{margin: 0px; padding: 0px;}
-.dialog{float: left; overflow: hidden}
+
+html, body{overflow: hidden}
+
+.dialog{float: left;}
 
 .leftArea{width: 200px; height:100%; max-width: 200px; float: left; padding: 10px 0px 10px 8px}
 
