@@ -1,20 +1,18 @@
 
 require.config({
     
-        baseUrl:"javascripts",
         paths:{
-            jQuery:"jquery-1.11.1.min",
+            jquery:"jquery-1.11.1.min",
         }
     
     });
 
-define(["domReady!", "jQuery"], function(domReady, $, require){
+define(["domReady!", "jquery", "require"], function(domReady, $, require){
     
     //init form size;
     var winWidth, winHeight;
-    console.debug($);
-    
-   // var $navbox = $("[com-type='navBox']"), $toolbox = $("[com-type='toolBox']"), $editbox = $("[com-type='editBox']");
+    var $mainDialog = $("body#main-dialog");
+    var $navbox = $("[com-type='navBox']"), $toolbox = $("[com-type='toolBox']"), $editbox = $("[com-type='editBox']");
     
     function InitForm()
     {
@@ -24,11 +22,20 @@ define(["domReady!", "jQuery"], function(domReady, $, require){
         winWidth = document.documentElement.clientWidth;
         winHeight = document.documentElement.clientHeight;
         
-       // $editbox.height = $toolbox.height = winHeight - $navbox.height;
+        //var t_height = winHeight - $navbox.height();
+        $mainDialog.height(t_height),
+        $mainDialog.width(winWidth); 
+        
+   
     }
         
     };
     
-        InitForm();
+    InitForm();
     
+    $(window).bind("resize", function(){
+        InitForm();
+    });
+        
+
     });
