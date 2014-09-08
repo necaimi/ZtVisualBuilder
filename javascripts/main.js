@@ -11,21 +11,22 @@ define(["domReady!", "jquery", "require"], function(domReady, $, require){
     
     //init form size;
     var winWidth, winHeight;
-    var $mainDialog = $("body#main-dialog");
-    var $navbox = $("[com-type='navBox']"), $toolbox = $("[com-type='toolBox']"), $editbox = $("[com-type='editBox']");
+    var $mainDialog = $("div#main-dialog");
+    var $navbox = $("[com-type='navBox']"), $toolArea = $("div.leftArea"), $editArea = $("div.rightArea");
     
     function InitForm()
     {
         
     if(document.documentElement)
     {
-        winWidth = document.documentElement.clientWidth;
-        winHeight = document.documentElement.clientHeight;
+        clientWidth = document.documentElement.clientWidth;
+        clientHeight = document.documentElement.clientHeight;
+       
+     
+        $mainDialog.height(clientHeight),
+        $mainDialog.width(clientWidth); 
         
-        //var t_height = winHeight - $navbox.height();
-        $mainDialog.height(t_height),
-        $mainDialog.width(winWidth); 
-        
+        $editArea.width(clientWidth - $toolArea.width() - 30);
    
     }
         
@@ -36,6 +37,6 @@ define(["domReady!", "jquery", "require"], function(domReady, $, require){
     $(window).bind("resize", function(){
         InitForm();
     });
-        
+
 
     });

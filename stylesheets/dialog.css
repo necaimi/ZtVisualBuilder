@@ -1,19 +1,17 @@
 /* eni layout */
 
 *{margin: 0px; padding: 0px;}
-.dialog{width: 100%; height: 100%;}
+.dialog{float: left; overflow: hidden}
 
 .leftArea{width: 200px; height:100%; max-width: 200px; float: left; padding: 10px 0px 10px 8px}
 
 .topArea{width: 100%; height: 20px; background-color:#3c3f41;}
 
-.rightArea{width:auto; height: 100%; float: left; display: inline; padding: 10px}
+.rightArea{float: left; display: inline; padding: 10px; height: 100%}
 
 .def-text{color: #f1f1f1; font: 300 14px/15px 'Microsoft YaHei'; cursor: default}
 
 .tool-text{color: #f1f1f1; font: 300 12px/15px 'Microsoft YaHei'; cursor: default}
-
-
 
 
 /* ui effect */
@@ -25,7 +23,6 @@
 
 .tool-box-background{background-color: #464646}
 /* animate */
-
 
 
 /* index box */
@@ -56,9 +53,9 @@
 
 
 /* show area */
-.edit-box{width: 100%; height: 100%}
+.edit-box{display: inline; width: 100%; height: 100%; float: left}
 
-.edit-box .compoment{ width: 100%; height: 100%}
+.edit-box .compoment{ width: 100%; height: 94%;}
 
 /* color style */
 
