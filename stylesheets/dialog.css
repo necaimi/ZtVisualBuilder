@@ -9,8 +9,6 @@
 
 .rightArea{width:auto; height: 100%; float: left; display: inline; padding: 10px}
 
-.defbackground{background-color: #3c3f41}
-
 .def-text{color: #f1f1f1; font: 300 14px/15px 'Microsoft YaHei'; cursor: default}
 
 .tool-text{color: #f1f1f1; font: 300 12px/15px 'Microsoft YaHei'; cursor: default}
@@ -23,6 +21,9 @@
 
 .drop{position: relative}
 
+.defbackground{background-color: #3c3f41}
+
+.tool-box-background{background-color: #464646}
 /* animate */
 
 
@@ -39,9 +40,9 @@
 
 /* tool area */
 
-.toolBox{width: 100%; height: 900px; float: left}
+.tool-Box{width: 100%; height: 900px; float: left}
 
-.toolBox .logo{float: right; margin-right: 10px; border-radius: 2px}
+.tool-Box .logo{float: right; margin-right: 10px; border-radius: 2px}
 
 .function-group{ float: left; width: 96%;  margin: 10px 0px 0px 0px}
 
