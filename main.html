@@ -9,29 +9,13 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/dialog.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/ztlist_gz.css" />
         
-        <script data-main="javascripts/main" src="javascripts/require.js"></script>
+        <script src="thirdlibs/json2.js"></script>
+        <script data-main="main" src="thirdlibs/require.js"></script>
         
     </head>
     
     <body>
         <div class="dialog" id="main-dialog">
-        <!-- nav area -->
-        <div class="topArea">
-            <ul class="nav-box def-text" com-type="navBox">
-                <li class="nav-el">
-                    文件
-                </li>
-                <li class="nav-el">
-                    工具箱
-                </li>
-                <li class="nav-el">
-                    视图
-                </li>
-                <li class="nav-el">
-                    帮助
-                </li>
-            </ul>
-        </div>
         
         <!-- left tool area -->
        <div class="leftArea tool-box-background">
@@ -108,6 +92,19 @@
         
         <!-- right area -->
         <div class="rightArea">
+            
+            <!-- nav area -->
+        <div class="topArea">
+            <ul class="nav-box def-text" com-type="navBox">
+                <li class="nav-el">
+                    视图
+                </li>
+                
+                <li class="nav-el">
+                    帮助
+                </li>
+            </ul>
+        </div>
             <div class="edit-box" com-type="editBox">
                 <textarea class="compoment">ssss</textarea>
             </div>

@@ -1,5 +1,13 @@
 
-define(function(require, exports, module){
-    console.debug("ext.js");
 
+
+
+define(function(require, exports, module){
+    "use strict";
+
+    var extList = JSON.parse(require("text!../extensions/ext.json"));
+  
+    var ext_len = extList.length;
+
+    
     });
