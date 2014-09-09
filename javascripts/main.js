@@ -1,6 +1,5 @@
 
 require.config({
-    
         paths:{
             jquery:"jquery-1.11.1.min",
         }
@@ -37,6 +36,18 @@ define(["domReady!", "jquery", "require"], function(domReady, $, require){
     $(window).bind("resize", function(){
         InitForm();
     });
+    
+    
+    function InitExtenstion()
+    {
+        
+        var ajson = require("../extensions/ext");
+        console.debug(ajson);
+        
+    };
+    
+    InitExtenstion();
+    
 
 
     });
