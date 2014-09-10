@@ -3,7 +3,8 @@ require.config({
         paths:{
             jquery:"thirdlibs/jquery-1.11.1.min",
             domReady:"thirdlibs/domReady",
-            text:"thirdlibs/text"
+            text:"thirdlibs/text",
+            mustache:"thirdlibs/mustache"
         }
     
     });
@@ -14,7 +15,7 @@ define(["domReady!", "jquery", "require"], function(domReady, $, require){
     //init form size;
     
     window.$ = $;
-    
+
     var winWidth, winHeight;
     var $mainDialog = $("div#main-dialog");
     var $navbox = $("[com-type='navBox']"), $toolArea = $("div.leftArea"), $editArea = $("div.rightArea");
@@ -43,6 +44,8 @@ define(["domReady!", "jquery", "require"], function(domReady, $, require){
         InitForm();
     });
       
+        window.Mustache = require(["mustache"]);
+    
         require(["ext"]);
    
 
