@@ -1,0 +1,14 @@
+{
+    "extensions":[
+        {
+            "name":"skubuilder",
+            "version":"1.0",
+            "author":"na"
+        },
+        {
+            "name":"modulebuilder",
+            "version":"1.0",
+            "author":"na"
+        }
+    ]
+}

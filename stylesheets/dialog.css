@@ -44,7 +44,7 @@ html, body{overflow: hidden}
 
 .tool-Box .logo{float: right; margin-right: 10px; border-radius: 2px}
 
-.function-group{ float: left; width: 96%;  margin: 10px 0px 0px 0px}
+.function-group{ float: left; width: 96%;  margin: 10px 0px 0px 0px; overflow: hidden}
 
 .function-group-el{list-style-type: none; float: left; margin: 5px; width: 20px; height: 20px; display: inline}
 

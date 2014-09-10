@@ -1,8 +1,9 @@
 
 require.config({
-    baseUrl:"./thirdlibs",
         paths:{
-            jquery:"jquery-1.11.1.min",
+            jquery:"thirdlibs/jquery-1.11.1.min",
+            domReady:"thirdlibs/domReady",
+            text:"thirdlibs/text"
         }
     
     });
@@ -42,7 +43,7 @@ define(["domReady!", "jquery", "require"], function(domReady, $, require){
         InitForm();
     });
       
-        require(["../extensions/ext"]);
+        require(["ext"]);
    
 
 
