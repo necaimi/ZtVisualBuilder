@@ -1,7 +1,6 @@
 
 require.config({
         paths:{
-            jquery:"thirdlibs/jquery-1.11.1.min",
             domReady:"thirdlibs/domReady",
             text:"thirdlibs/text",
             mustache:"thirdlibs/mustache"
@@ -9,12 +8,10 @@ require.config({
     
     });
 
-define(["domReady!", "jquery", "require"], function(domReady, $, require){
+define(["domReady!", "require"], function(domReady,require){
     "use strict";
     
     //init form size;
-    
-    window.$ = $;
 
     var winWidth, winHeight;
     var $mainDialog = $("div#main-dialog");
