@@ -5,7 +5,8 @@ define(function(require, exports, module){
 
     /*globle init*/
     
-    var Global = require("module/utils/Global");
+    var Global      = require("module/utils/Global"),
+        ToolBox     = require("module/utils/ToolBox");
 
     var extList = JSON.parse(require("text!ext.json")), ext_array = extList.extensions, ext_len = ext_array.length, itr = 0;
 

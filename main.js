@@ -40,8 +40,6 @@ define(["domReady!", "require"], function(domReady,require){
     $(window).bind("resize", function(){
         InitForm();
     });
-      
-        window.Mustache = require(["mustache"]);
     
         require(["ext"]);
    
