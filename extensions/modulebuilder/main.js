@@ -7,11 +7,9 @@ define(function(require, exports, module){
     
     var UiText = {"Title":"模板生成工具"};
     
-    console.debug(Mustache.render);
-    
-    var ToolDialogTemplate = Mustache.render(ToolDialogTemplate, "{UI:UiText}");
+   //  var ToolDialogTemplate = Mustache.render(ToolDialogTemplate, "{UI:UiText}");
     
     
     
-    $("#main-dialog").append($(ToolDialogTemplate));
+  //  $("#main-dialog").append($(ToolDialogTemplate));
 });
