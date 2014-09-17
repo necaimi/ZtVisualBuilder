@@ -10,8 +10,6 @@ define(function(require, exports, module){
             domtree.Editor_Tool = dom_toolbox.find("#editor_tool"), 
             domtree.Module_Tool = dom_toolbox.find("#module_tool"), 
             domtree.Sku_Tool    = dom_toolbox.find("#sku_tool");
-            
-            BindEvent();
         }
     };
     

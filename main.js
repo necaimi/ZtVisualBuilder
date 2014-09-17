@@ -40,7 +40,7 @@ define(["domReady!", "require"], function(domReady,require){
     $(window).bind("resize", function(){
         InitForm();
     });
-    
+
         require(["ext"]);
    
 
