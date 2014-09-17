@@ -4,5 +4,6 @@ define(function(require, exports, module){
     
     console.debug("sku builder init");
     
+    var ToolBoxManager =  ext.getModule(["../editor/ToolBoxManager"]);
     
 });
