@@ -5,11 +5,14 @@ define(function(require, exports, module){
 
     /*globle init*/
     
-    var Global      = require("module/utils/Global");
+    var Global              = require("module/utils/Global"),
+        Commands            = require("module/command/Commands"),
+        CommandManager      = require("module/command/CommandManager"),
+        ToolBox             = require("module/editor/ToolBox"),
+        ToolBoxManager      = require("module/editor/ToolBoxManager");
 
     var extList = JSON.parse(require("text!ext.json")), ext_array = extList.extensions, ext_len = ext_array.length, itr = 0;
 
-    
     for(itr; itr < ext_len; itr++)
     {
         require(["extensions/" + ext_array[itr].name + "/main"]);

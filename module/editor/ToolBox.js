@@ -1,8 +1,7 @@
 define(function(require, exports, module){
     "use strict";
     
-    var Command = require("../command/Commands");
-    
+    var Command = ext.getModule("module/command/Commands");
     var dom_toolbox = null, domtree = {"Editor_Tool":null, "Module_Tool":null, "Sku_Tool":null};
     
     function Initilize()
