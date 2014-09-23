@@ -59,22 +59,29 @@ define(function(require, exports, module){
     
     function register(name, id, commandfn)
     {
+     
+      
         if(_commands[id])
         {
+         
             return null;
         }
         
-        if(!name || !id || commandfn)
+        
+        if(!name || !id || !commandfn)
         {
             return null;
         }
-        
+         
+         
+       
         var command = new Command(name, id, commandfn);
         
         _commands[id] = command;
-        
+
         $(exports).triggerHandler("registerCompleted", [command]);
         
+       
         return command;
     }
     
