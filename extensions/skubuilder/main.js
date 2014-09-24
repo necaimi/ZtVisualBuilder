@@ -2,8 +2,7 @@
 define(function(require, exports, module){
     "use strict";
     
-    var ToolBoxManager =  ext.getModule("module/editor/ToolBoxManager"),
-        Commands       =  ext.getModule("module/command/Commands"),
+    var Commands       =  ext.getModule("module/command/Commands"),
         CommandManager =  ext.getModule("module/command/CommandManager"),
         UiText         =  JSON.parse(require("text!extensions/skubuilder/uitext.json"));
         

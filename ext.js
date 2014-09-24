@@ -8,8 +8,7 @@ define(function(require, exports, module){
     var Global              = require("module/utils/Global"),
         Commands            = require("module/command/Commands"),
         CommandManager      = require("module/command/CommandManager"),
-        ToolBox             = require("module/editor/ToolBox"),
-        ToolBoxManager      = require("module/editor/ToolBoxManager");
+        ToolBox             = require("module/editor/ToolBox");
 
     var extList = JSON.parse(require("text!ext.json")), ext_array = extList.extensions, ext_len = ext_array.length, itr = 0;
 

@@ -1,8 +1,95 @@
 define(function(require, exports, module){
     "use strict";
     
-    var Command = ext.getModule("module/command/Commands");
+    var Command = ext.getModule("module/command/Commands"),
+        CommandManager = ext.getModule("module/command/CommandManager");
+    
     var dom_toolbox = null, domtree = {"Editor_Tool":null, "Module_Tool":null, "Sku_Tool":null};
+    
+    
+    var ToolBoxType = {
+        "EDIT_BOX":"edit-box",
+        "MODULE_BOX":"module-box",
+        "SKU_BOX":"sku-box"
+    };
+    
+    
+    // toolbox;
+    
+    var toolBoxMap = {}, toolItemMap = {};
+    
+    function _getToolItem(id){
+        
+    };
+    
+    function _getHTMLToolItem(id){
+        return $("#" + id).get(0);
+    };
+    
+    function ToolBox(id)
+    {
+        this.id = id;
+    };
+    
+    ToolBox.prototype._getToolItemID = function(commandID){
+        return (this.id + "-" +commandID);
+    };
+    
+    ToolBox.prototype._getToolItemByCommand = function(command){
+        if(!command){
+            return null;
+        }
+        
+        var _getItem = toolItemMap[this._getToolItemID(command.getID())];
+        
+        if(!_getItem){
+            return null;
+        }
+        
+        return $(_getHTMLToolItem(_getItem.id));
+    };
+    
+    ToolBox.prototype.addToolItem = function(command, keybinds, icon){
+       var itemID = this.id,
+           commandID,
+           name;
+           
+        if(!command){
+            return null;
+        } 
+        
+        if(command !== "string"){
+        commandID   = command.getID();
+        name        = command.getName();
+        }
+        var id = this._getToolItemID(commandID);       // dom id;
+        
+        if(toolItemMap[id]){
+            return null;                               // had it;
+        }
+        
+    };
+    
+    
+    function ToolBoxItem(id, command){
+        this.id                  = id;
+        this._command            = command;
+        
+        this._enabledChanged     = this._enabledChanged.bind(this);
+        this._checkedChanged     = this._checkedChanged.bind(this);
+        this._nameChanged        = this._nameChanged.bind(this);
+        this._keyBindingAdded    = this._keyBindingAdded.bind(this);
+        this._keyBindingRemoved  = this._keyBindingRemoved.bind(this);
+        
+        $(this._command).on("enabledStateChange", this._enabledChanged)
+                .on("checkedStateChange", this._checkedChanged)
+                .on("nameChange", this._nameChanged)
+                .on("keyBindingAdded", this._keyBindingAdded)
+                .on("keyBindingRemoved", this._keyBindingRemoved);
+        
+        
+    };
+    
     
     function Initilize()
     {
@@ -23,40 +110,14 @@ define(function(require, exports, module){
         Initilize();
     };
     
-    function AddItem(pori, type)
+    function AddItem(type)
     {
-        switch(type){
-                case "Editor_Tool":
-                domtree.Editor_Tool.find(".function-group").appendChild(pori);
-                break;
-                case "Module_Tool":
-                domtree.Module_Tool.find(".function-group").appendChild(pori);
-                break;
-                case "Sku_Tool":
-                domtree.Sku_Tool.find(".function-group").appendChild(pori);
-                break;
-        }
-        
-        $(exports).triggerHandler(Command.TOOLBOX_ADDITEM, [pori, type]);
+      $(exports).triggerHandler(Command.TOOLBOX_ADDITEM, [pori, type]);
     };
     
     function RemoveItem(pori, type)
     {
-        
-        switch(type){
-                case "Editor_Tool":
-                domtree.Editor_Tool.find(".function-group").removeChild(pori);
-                break;
-                case "Module_Tool":
-                domtree.Module_Tool.find(".function-group").removeChild(pori);
-                break;
-                case "Sku_Tool":
-                domtree.Sku_Tool.find(".function-group").removeChild(pori);
-                break;
-        }
-        
-        $(exports).triggerHandler(Command.TOOLBOX_REMOVEITEM, [pori, type]);
-        
+      $(exports).triggerHandler(Command.TOOLBOX_REMOVEITEM, [pori, type]);
     };
     
     exports.SetToolBoxOrin      =       SetToolBoxOrin;
