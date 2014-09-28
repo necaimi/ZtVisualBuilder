@@ -4,10 +4,10 @@ define(function(require, exports, module){
     var Command = ext.getModule("module/command/Commands"),
         CommandManager = ext.getModule("module/command/CommandManager");
     
-    var dom_toolbox = null, domtree = {"Editor_Tool":null, "Module_Tool":null, "Sku_Tool":null};
+    var $dom_toolbox = null, domtree = {"Editor_Tool":null, "Module_Tool":null, "Sku_Tool":null};
     
     
-    var ToolBoxType = {
+    var ToolBoxList = {
         "EDIT_BOX":"edit-box",
         "MODULE_BOX":"module-box",
         "SKU_BOX":"sku-box"
@@ -19,7 +19,7 @@ define(function(require, exports, module){
     var toolBoxMap = {}, toolItemMap = {};
     
     function _getToolItem(id){
-        
+        return toolItemMap[id];
     };
     
     function _getHTMLToolItem(id){
@@ -52,6 +52,7 @@ define(function(require, exports, module){
     ToolBox.prototype.addToolItem = function(command, keybinds, icon){
        var itemID = this.id,
            commandID,
+           $toolitem,
            name;
            
         if(!command){
@@ -62,12 +63,25 @@ define(function(require, exports, module){
         commandID   = command.getID();
         name        = command.getName();
         }
-        var id = this._getToolItemID(commandID);       // dom id;
         
+         // dom id;
+        var id = this._getToolItemID(commandID);      
+        
+        // had it;
         if(toolItemMap[id]){
-            return null;                               // had it;
+            return null;                               
         }
         
+        var n_item = new ToolBoxItem(id, command);
+        toolItemMap[id] = n_item;
+        
+        // create menuitem dom;
+        $toolitem = $("<li class='function-group-el' title='"+ name +"'><a href='javascript:;'><img src='"+ icon +"' /></a></li>");
+        $toolitem.on("click", function(){
+            n_item._command.execute();
+        });
+        
+        return n_item;
     };
     
     
@@ -86,42 +100,65 @@ define(function(require, exports, module){
                 .on("nameChange", this._nameChanged)
                 .on("keyBindingAdded", this._keyBindingAdded)
                 .on("keyBindingRemoved", this._keyBindingRemoved);
-        
-        
     };
     
     
-    function Initilize()
-    {
-        if(!dom_toolbox)
-        {
-            domtree.Editor_Tool = dom_toolbox.find("#editor_tool"), 
-            domtree.Module_Tool = dom_toolbox.find("#module_tool"), 
-            domtree.Sku_Tool    = dom_toolbox.find("#sku_tool");
+    function SetToolBoxOrin(pori){
+         if($dom_toolbox){
+            return $dom_toolbox;
+         }
+        
+        if(!pori){
+            return null;
         }
+        if(pori !== "object"){
+             $dom_toolbox = $(pori);
+            return $dom_toolbox;
+        }
+       
     };
     
-    function SetToolBoxOrin(pori)
+    function getToolBox(id){
+        return toolBoxMap[id];
+    };
+    
+    function AddToolBox(name, id)
     {
-        if(dom_toolbox)
-            return;
+        if(!name || !id){
+            console.log("not the type");
+            return null;
+        }
         
-        dom_toolbox = pori;
-        Initilize();
+        var n_toolbox = new ToolBox(id);
+        toolBoxMap[id] = n_toolbox;
+        
+        //create dom;
+        var $n_toolbox = $("<div class='function-group' id='"+id+"_tool'><p class='tool-text def-grey'>"+ name +"</p><ul class='function-group'></div>");
+        $dom_toolbox.append($n_toolbox);
+        return n_toolbox;
     };
     
-    function AddItem(type)
+    function RemoveToolBox(id, name)
     {
-      $(exports).triggerHandler(Command.TOOLBOX_ADDITEM, [pori, type]);
+        var cur_toolbox = null;
+        if(!(cur_toolbox = toolBoxMap[id])){
+            console.log("this toolbox is not exist");
+            return null;
+        }
+        
+       // delete cur_toolbox;
+        
     };
     
-    function RemoveItem(pori, type)
-    {
-      $(exports).triggerHandler(Command.TOOLBOX_REMOVEITEM, [pori, type]);
-    };
+    function GetToolBox(id){
+        return toolBoxMap[id];
+    }
     
+    exports.ToolBoxList         =       ToolBoxList;
     exports.SetToolBoxOrin      =       SetToolBoxOrin;
-    exports.AddItem             =       AddItem;
-    exports.RemoveItem          =       RemoveItem;
+    exports.AddToolBox          =       AddToolBox;
+    exports.RemoveToolBox       =       RemoveToolBox;
+    exports.GetToolBox          =       GetToolBox;
+    exports.ToolBox             =       ToolBox;
     
 });
