@@ -50,10 +50,7 @@ define(function(require, exports, module){
     };
     
     ToolBox.prototype.addToolItem = function(command, keybinds, icon){
-       var itemID = this.id,
-           commandID,
-           $toolitem,
-           name;
+       var itemID = this.id, commandID, $toolitem, name;
            
         if(!command){
             return null;
@@ -81,6 +78,10 @@ define(function(require, exports, module){
             n_item._command.execute();
         });
         
+        //keybinds 
+        
+        _getHTMLToolBox(this.id).append($toolitem);
+        
         return n_item;
     };
     
@@ -89,11 +90,11 @@ define(function(require, exports, module){
         this.id                  = id;
         this._command            = command;
         
-        this._enabledChanged     = this._enabledChanged.bind(this);
-        this._checkedChanged     = this._checkedChanged.bind(this);
-        this._nameChanged        = this._nameChanged.bind(this);
-        this._keyBindingAdded    = this._keyBindingAdded.bind(this);
-        this._keyBindingRemoved  = this._keyBindingRemoved.bind(this);
+        this._enabledChanged     = this._enabledChanged;
+        this._checkedChanged     = this._checkedChanged;
+        this._nameChanged        = this._nameChanged;
+        this._keyBindingAdded    = this._keyBindingAdded;
+        this._keyBindingRemoved  = this._keyBindingRemoved;
         
         $(this._command).on("enabledStateChange", this._enabledChanged)
                 .on("checkedStateChange", this._checkedChanged)
@@ -104,28 +105,26 @@ define(function(require, exports, module){
     
     
     function SetToolBoxOrin(pori){
-         if($dom_toolbox){
-            return $dom_toolbox;
-         }
-        
-        if(!pori){
-            return null;
-        }
-        if(pori !== "object"){
-             $dom_toolbox = $(pori);
-            return $dom_toolbox;
-        }
-       
-    };
+            return $dom_toolbox = $(pori);
+        };
     
     function getToolBox(id){
         return toolBoxMap[id];
     };
     
+    function _getHTMLToolBox(id){
+        return $("#" + id + "-tool");
+    }
+    
     function AddToolBox(name, id)
     {
         if(!name || !id){
-            console.log("not the type");
+            console.error("no param");
+            return null;
+        }
+        
+        if(toolBoxMap[id]){
+            console.error("this id has registed");
             return null;
         }
         
@@ -133,7 +132,7 @@ define(function(require, exports, module){
         toolBoxMap[id] = n_toolbox;
         
         //create dom;
-        var $n_toolbox = $("<div class='function-group' id='"+id+"_tool'><p class='tool-text def-grey'>"+ name +"</p><ul class='function-group'></div>");
+        var $n_toolbox = $("<div class='function-group' id='"+id+"-tool'><p class='tool-text def-grey'>"+ name +"</p><ul class='function-group'></div>");
         $dom_toolbox.append($n_toolbox);
         return n_toolbox;
     };
