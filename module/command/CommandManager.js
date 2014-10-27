@@ -72,9 +72,7 @@ define(function(require, exports, module){
         {
             return null;
         }
-         
-         
-       
+        
         var command = new Command(name, id, commandfn);
         
         _commands[id] = command;

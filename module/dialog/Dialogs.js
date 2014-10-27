@@ -5,7 +5,8 @@ define(function(require, exports, module){
     var dialog_msg = {
         "DIALOG_BTN_OK":"ok",
         "DIALOG_BTN_CANCEL":"cancel",
-        "DIALOG_BTN_MINSIZE":"minsize"
+        "DIALOG_BTN_MINSIZE":"minsize",
+        "DIALOG_BTN_MAXSIZE":"maxsize"
     };
     
     var z_index = 1000;    
@@ -16,13 +17,15 @@ define(function(require, exports, module){
         this._titleBar = null,
         this._srcWidth = $dlg.width,
         this._srcHeight = $dlg.height;
+        
+        
     };
     
-    Dialog.prototype.GetDlgObject(){
+    Dialog.prototype._getDlgObject = function(){
         return this._$dlg;
     };
     
-    Dialog.prototype.SetMaxSize(){
+    Dialog.prototype._setMaxSize = function(){
         var max_width = $("body").width,
             max_height= $("body").height;
         
@@ -30,12 +33,12 @@ define(function(require, exports, module){
         
     };
     
-    Dialog.prototype.SetNormalSize(){
+    Dialog.prototype._setNormalSize = function(){
           this._$dlg.stop(false, true).animate({"width":this._srcWidth, "height":this._srcHeight}, 300);
     };
     
     
-    Dialog.prototype.SetMinSize(){
+    Dialog.prototype._setMinSize = function(){
         if(!this._titleBar){
             return null;
         }
@@ -44,17 +47,18 @@ define(function(require, exports, module){
             t_bar_height = this._titleBar.height;
         
         
+        
     };
     
-    Dialog.prototype.Close(){
-        
+    Dialog.prototype._close = function(){
+        this._$dlg.remove();
     };
     
     function TitleBar(){
         this._candrag = true;
     };
     
-    TitleBar.prototype.DragEnabled(b){
+    TitleBar.prototype.DragEnabled = function(b){
         this._candrag = b;
     };
     
@@ -63,8 +67,6 @@ define(function(require, exports, module){
             console.error("no template");
             return null;
         }
-        
-        $("body").append("<div class='dlg-frame'><div class='dlg-inner'></div></div>");
         
         var $dlg = $(template)
                    .addClass("initlized")
