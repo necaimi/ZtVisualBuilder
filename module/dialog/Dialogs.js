@@ -26,15 +26,16 @@ define(function(require, exports, module){
     };
     
     Dialog.prototype._setMaxSize = function(){
-        var max_width = $("body").width,
-            max_height= $("body").height;
+         
+        var max_width = $("body").width(),
+            max_height= $("body").height();
         
-        this._$dlg.stop(false, true).animate({"width":max_width, "height":max_height}, 300);
+        this._$dlg.find("#dialog").css({"width":max_width, "height":max_height - 20, "top":0, "left":0});
         
     };
     
     Dialog.prototype._setNormalSize = function(){
-          this._$dlg.stop(false, true).animate({"width":this._srcWidth, "height":this._srcHeight}, 300);
+          this._$dlg.find("#dialog").css({"width":this._srcWidth, "height":this._srcHeight});
     };
     
     
@@ -71,7 +72,6 @@ define(function(require, exports, module){
         var $dlg = $(template)
                    .addClass("initlized")
                    .appendTo(".dlg-inner:last");
-        
         
         return (new Dialog($dlg, b_modal));
     };

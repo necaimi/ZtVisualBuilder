@@ -4,7 +4,7 @@
 
 html, body{overflow: hidden}
 
-.dialog{float: left;}
+.dialog{float: left; width: 800px; height: 600px;}
 
 .leftArea{width: 200px; height:100%; max-width: 200px; float: left; padding: 0px 0px 10px 0px}
 

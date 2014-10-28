@@ -15,9 +15,9 @@ define(function(require, exports, module){
    
     function SkuBuilderOpenHandler()
     {
-        var $ToolDialogHTML = $(Mustache.render(ToolDialogHTML, {"UI":UiText}));
-        var cur = Dialog.ShowDialog($ToolDialogHTML, false);
-        console.debug(cur);
+        var t_ToolDialogHTML = Mustache.render(ToolDialogHTML, {"UI":UiText});
+        var cur = Dialog.ShowDialog(t_ToolDialogHTML, false);
+            //cur._setMaxSize();
         
     };
          
