@@ -26,11 +26,8 @@ define(function(require, exports, module){
     };
     
     Dialog.prototype._setMaxSize = function(){
-         
-        var max_width = $("body").width(),
-            max_height= $("body").height();
         
-        this._$dlg.find("#dialog").css({"width":max_width, "height":max_height - 20, "top":0, "left":0});
+        this._$dlg.find("#dialog").css({"width":"100%", "height":"100%", "top":0, "left":0});
         
     };
     
