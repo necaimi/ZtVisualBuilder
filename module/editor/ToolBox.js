@@ -73,7 +73,7 @@ define(function(require, exports, module){
         toolItemMap[id] = n_item;
         
         // create menuitem dom;
-        $toolitem = $("<li class='function-group-el' title='"+ name +"'><a href='javascript:;'><img src='"+ icon +"' /></a></li>");
+        $toolitem = $("<li class='u-fcg-el' title='"+ name +"'><img src='"+ icon +"' /></li>");
         $toolitem.on("click", function(){
             n_item._command.execute();
         });
@@ -132,7 +132,7 @@ define(function(require, exports, module){
         toolBoxMap[id] = n_toolbox;
         
         //create dom;
-        var $n_toolbox = $("<div class='function-group' id='"+id+"-tool'><p class='tool-text def-grey'>"+ name +"</p><ul class='function-group'></div>");
+        var $n_toolbox = $("<div class='g-fcg'><strong class='u-ttl'>"+ name +"</strong><ul class='g-li f-cb' id='"+id+"-tool'></ul></div>");
         $dom_toolbox.append($n_toolbox);
         return n_toolbox;
     };

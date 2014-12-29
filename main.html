@@ -8,43 +8,44 @@
         
         <link rel="stylesheet" type="text/css" href="stylesheets/dialog.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/patch.css" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/frame.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/codemirror.css"/>
         <script src="thirdlibs/mustache.js"></script>
         
     </head>
     
-    <body>
+    <body onscroll="return false">
         <div class="g-frame" id="main-dialog">
         
         <!-- left tool area -->
-       <div class="g-fleft tool-box-background">
+       <div class="g-fleft">
            
            <!-- left tool box -->
-         <div class="tool-Box" com-type="toolBox">
-             <p class="def-text def-grey toolHeader defbackground">工具箱<span class="logo"><img src="ui/settings.png"/></span></p>
-             
+         <div class="u-tlb" com-type="toolBox">
+            <div class="g-ttl f-cb">
+            <strong class="u-ttl">工具箱</strong>
+            <div class="u-ico"><img src="ui/settings.png"/></div>
+            </div>
+            
            </div> <!-- left tool box -->
-           
         </div> <!-- left tool area -->
         
         <!-- right area -->
         <div class="g-fright">
             
             <!-- nav area -->
-        <div class="g-ftop dark-blue-bg">
-            <ul class="nav-box def-text" com-type="navBox">
-                <li class="nav-el">
+        <div class="g-ftop">
+            <ul class="g-nav g-li f-cb" com-type="navBox">
+                <li class="u-nav">
                     视图
                 </li>
                 
-                <li class="nav-el">
+                <li class="u-nav">
                     帮助
                 </li>
             </ul>
         </div>
-            <div class="edit-box" com-type="editBox">
-                <textarea class="compoment" placeholder="Code Edit Panel" id="mainedit"></textarea>
+            <div class="g-edbox" com-type="editBox">
+                <textarea class="m-text" placeholder="Code Edit Panel" id="mainedit"></textarea>
             </div>
         </div> <!-- right area -->
         </div>
