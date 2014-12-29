@@ -22,23 +22,16 @@ define(["domReady!", "require"], function(domReady,require){
         
     if(document.documentElement)
     {
-        var clientWidth = document.documentElement.clientWidth,
-            clientHeight = document.documentElement.clientHeight;
-       
-     
-        $mainDialog.height(clientHeight),
-        $mainDialog.width(clientWidth); 
-        
-        $editArea.width(clientWidth - $toolArea.width() - 30);
-   
+        var clientHeight = document.documentElement.clientHeight;
+        $mainDialog.height(clientHeight);
     }
         
     };
     
-   // InitForm();
+    InitForm();
     
     $(window).bind("resize", function(){
-        InitForm();
+     InitForm();
     });
         
       //  var _edit = document.getElementById("mainedit");

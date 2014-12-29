@@ -1,41 +1,46 @@
 @charset "utf-8";
 
-body{ margin: 0; padding: 0; overflow: hidden; }
+body{ margin: 0; padding: 0; }
 /*frame*/
-.g-frame{*zoom:1; width: 100%; height: 100%;}
+.g-frame{*zoom:1;padding-left:180px; padding-right: 30px;}
 .g-frame:after{display:block;visibility:hidden;clear:both;height:0;overflow:hidden;content:'.';}
-.g-fleft{width:280px; height:100%; max-width: 280px; float: left; background-color: #393939}
-.g-fright{float: right; height: 100%; margin-right: -280px; width: 100%}
-.g-ftop{width: 100%; height: 32px;}
+.g-sidebar, .g-content, .g-flashbar{float: left; display: inline}
+.g-header{width: 100%; height: 0}
+.g-sidebar{ width:180px; height:100%;background-color: #393939; margin-left: -180px}
+.g-content{height: 100%; width: 100%; position: relative;}
+.g-flashbar{height: 100%; width: 30px; background-color: #3f3f3f; margin-right:-31px}
+.g-stabar{width: 100%; height: 24px; border-top: 1px; border-top-color: #252525; background-color: #3f3f3f}
 
-
+/*tab*/
+.g-ftop{width: 100%; height: 24px;}
 
 /* dialog  */
 .u-ico{width: 24px; height: 24px;}
-.u-ttl{font-size: 14px; line-height: 22px; height: 22px;  color: #fff; }
+.u-ttl{font-size: 14px; line-height: 24px; height: 24px;  color: #fff; }
 
 /* nav box [com-type="navBox"]*/
-.g-nav{width:100%; height: 32px; background-color: #11b4ea;}
+.g-nav{width:100%; height: 100%; background-color: #11b4ea;}
 .u-nav{padding: 0 10px}
 .u-nav:hover{background-color: #3f3f3f}
 
 /* toolbox [com-type="toolBox"]*/
-.u-tlb{width:280px; height: 100%;}
-.u-tlb .g-ttl{overflow: hidden; height: 32px; background-color: #54cff8;}
+.u-tlb{ height: 100%;}
+.u-tlb .g-ttl{overflow: hidden; height: 24px; background-color: #54cff8;}
 .g-ttl .u-ico{float: right; margin: auto 15px auto 0 }
 
 /* tools */
-.g-fcg{width: 100%; margin: 5px 0;}
-.g-fcg .u-ttl{ margin: 10px 0px 10px 15px}
-.u-fcg-el{width: 26px; height: 26px;}
+.g-fcg{ margin: 5px 0;}
+.g-fcg .u-ttl{ margin: 10px 0px 10px 15px; font-size: 12px}
+.u-fcg-el{width: 20px; height: 20px;}
 .u-fcg-el:hover{border: 1px solid #11b4ea; box-shadow:0 0 10px #06C; border-radius: 6px; }
 
-.g-ttl .u-ttl, .g-nav .u-nav{font-size: 16px; line-height: 32px; height: 32px;  color: #fff; float: left; margin-left: 15px; display: block; overflow: hidden; cursor: default}
-
+.g-ttl .u-ttl, .g-nav .u-nav{font-size: 14px; line-height: 24px; height: 24px;  color: #fff; float: left; margin-left: 15px; display: block; overflow: hidden; cursor: default}
 
 /* editbox [com-type="editBox"]*/
-.g-edbox{width: 100%; height: 100%}
+.g-edbox{padding: 0; margin: 0;width: 99.5%; height: 99.5%}
 .g-edbox .m-text{width: 100%; height: 100%;}
+
+
 
 /*function*/
 .f-drag{position: absolute}

@@ -15,9 +15,10 @@
     
     <body onscroll="return false">
         <div class="g-frame" id="main-dialog">
-        
+        <!-- header -->
+            <div class="g-header"></div>
         <!-- left tool area -->
-       <div class="g-fleft">
+       <div class="g-sidebar">
            
            <!-- left tool box -->
          <div class="u-tlb" com-type="toolBox">
@@ -30,7 +31,7 @@
         </div> <!-- left tool area -->
         
         <!-- right area -->
-        <div class="g-fright">
+        <div class="g-content">
             
             <!-- nav area -->
         <div class="g-ftop">
@@ -47,8 +48,13 @@
             <div class="g-edbox" com-type="editBox">
                 <textarea class="m-text" placeholder="Code Edit Panel" id="mainedit"></textarea>
             </div>
+            <div class="g-stabar">
+            
+            </div>
         </div> <!-- right area -->
-        </div>
+            <div class="g-flashbar">
+            </div>
+        </div><!-- frame -->
         <div class='dlg-frame'><div class='dlg-inner'></div></div>
         
         <script src="thirdlibs/codemirror.min.js"></script>              
