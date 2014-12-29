@@ -1,21 +1,3 @@
-/* eni layout */
-
-*{margin: 0px; padding: 0px;}
-
-html, body{overflow: hidden}
-
-.dialog{float: left; width: 800px; height: 600px;}
-
-.leftArea{width: 200px; height:100%; max-width: 200px; float: left; padding: 0px 0px 10px 0px}
-
-.topArea{width: 100%; height: 30px; vertical-align: middle}
-
-.rightArea{float: left; display: inline; height: 100%}
-
-.def-text{color: #f1f1f1; font: 300 14px/15px 'Microsoft YaHei'; cursor: default}
-
-.tool-text{color: #f1f1f1; font: 300 12px/15px 'Microsoft YaHei'; cursor: default}
-
 
 /* ui effect */
 .drag{position: absolute}
@@ -29,10 +11,6 @@ html, body{overflow: hidden}
 .dark-blue-bg{background-color:#27323A; }
 
 .shadow{box-shadow: 0px 0px 10px #555555}
-
-
-/* animate */
-
 
 /* index box */
 .nav-box{float: left; width: 100%; vertical-align: middle; height: 30px}

@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document global css*/
+
+
+div,p,ul,ol,li{margin:0;padding:0;}
+/*grid*/
+.zt-g-bd{float:left; width:990px;vertical-align:bottom}
+.zt-g-bd img{vertical-align:bottom; border: none}
+
+.m-lists{list-style-type:none}
+.u-bt{cursor:pointer}
+.u-defbt{cursor:default; display:none}
+.u-oldp{text-decoration:line-through; margin-left:10px; font-size:14px; color:#6a6a6a}
+
+
+.f-cb{zoom:1}
+.f-cb:after{display:block;visibility:hidden;clear:both;height:0;overflow:hidden;content:'.';}
+.f-fl{float:left; display:inline}
+.f-fr{float:right; display:inline}
+.f-rl{position:relative}
+.f-inline{display: inline-block; float:none; *display:inline; *zoom:1}
+
+
+/*animate*/
+.htyanimate{-webkit-transition: all 0.3s linear;-moz-transition: all 0.3s linear;-ms-transition: all 0.3s linear;-o-transition: all 0.3s linear;transition: all 0.3s linear;}
+.htyanimate:hover{-webkit-box-shadow: #ddd 0px 0px 7px;-webkit-transform: translateY(-3px);-moz-box-shadow: #ddd 0px 0px 7px;-moz-transform: translateY(-3px);-ms-box-shadow: #ddd 0px 0px 7px;-ms-transform: translateY(-3px);-o-box-shadow: #ddd 0px 0px 7px;-o-transform: translateY(-3px);box-shadow: #ddd 0px 0px 7px;transform: translateY(-3px);}
+
+
+/* font global*/
+.zt-g-bd p, .zt-g-bd a, .zt-g-bd span{font-family: Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif; letter-spacing: 1px}

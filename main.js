@@ -35,12 +35,16 @@ define(["domReady!", "require"], function(domReady,require){
         
     };
     
-    InitForm();
+   // InitForm();
     
     $(window).bind("resize", function(){
         InitForm();
     });
-
+        
+      //  var _edit = document.getElementById("mainedit");
+      //  var editor = CodeMirror.fromTextArea(_edit, {
+   // lineNumbers: true
+    //    });
         require(["ext"]);
    
 

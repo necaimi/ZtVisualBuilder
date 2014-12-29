@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.g-frame{overflow: hidden; *zoom:1; width: 100%; height: 100%}
+.g-frame:after{display:block;visibility:hidden;clear:both;height:0;overflow:hidden;content:'.';}
+.g-fleft{width: 200px; height:100%; max-width: 200px; float: left; display: inline;}
+.g-fright{float: left; display: inline; height: 100%}
+.g-ftop{width: 100%; height: 30px; display: table;}
+

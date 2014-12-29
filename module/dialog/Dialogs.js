@@ -93,7 +93,7 @@ define(function(require, exports, module){
                 src_point._isDrag = _this._isDrag;
                 src_point.offsetx = e.clientX - p_dialog.offset().left;
                 src_point.offsety = e.clientY - p_dialog.offset().top;
-                p_dialog.css({"opacity":0.8});
+                p_dialog.css({"opacity":0.8, "z-index":"1025"});
                 $(document).bind("mousemove", function(e){
                     DragHandler(e, src_point, p_dialog);
                 });
