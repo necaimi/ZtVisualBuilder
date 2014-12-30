@@ -132,7 +132,7 @@ define(function(require, exports, module){
         toolBoxMap[id] = n_toolbox;
         
         //create dom;
-        var $n_toolbox = $("<div class='g-fcg'><strong class='u-ttl'>"+ name +"</strong><ul class='g-li f-cb' id='"+id+"-tool'></ul></div>");
+        var $n_toolbox = $("<div class='g-fcg'><strong class='u-title'>"+ name +"</strong><ul class='g-li f-cb' id='"+id+"-tool'></ul></div>");
         $dom_toolbox.append($n_toolbox);
         return n_toolbox;
     };

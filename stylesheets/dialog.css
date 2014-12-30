@@ -1,50 +1,54 @@
 @charset "utf-8";
 
-body{ margin: 0; padding: 0; }
+html,body{ margin: 0; padding: 0;height:100%; overflow: hidden;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;-o-user-select: none;user-select: none;cursor: default;-webkit-font-smoothing: antialiased;}
 /*frame*/
-.g-frame{*zoom:1;padding-left:180px; padding-right: 30px;}
+.g-frame{*zoom:1;padding-left:180px; padding-right: 30px; height: 100%}
 .g-frame:after{display:block;visibility:hidden;clear:both;height:0;overflow:hidden;content:'.';}
-.g-sidebar, .g-content, .g-flashbar{float: left; display: inline}
+.g-sidebar, .g-viewpanel, .g-flashbar{float: left; display: inline; position: relative}
 .g-header{width: 100%; height: 0}
 .g-sidebar{ width:180px; height:100%;background-color: #393939; margin-left: -180px}
-.g-content{height: 100%; width: 100%; position: relative;}
-.g-flashbar{height: 100%; width: 30px; background-color: #3f3f3f; margin-right:-31px}
-.g-stabar{width: 100%; height: 24px; border-top: 1px; border-top-color: #252525; background-color: #3f3f3f}
 
+.g-viewpanel{ width: 100%; height: 100%}
+.g-content{width: 100%; height: 100%}
+.g-content .g-panels{ height: 100%; width: 100%;}
+.g-content .g-top{width:100%; height: 24px; }
+.g-content .g-stabar{width: 100%; height: 24px; border-top: 1px; border-top-color: #252525; background-color: #3f3f3f;}
+.g-flashbar{height: 100%; width: 29px; background-color: #3f3f3f; margin-right:-31px; border-left:1px solid #212121; cursor: default}
+
+.m-panel{height: 100%}
 /*tab*/
 .g-ftop{width: 100%; height: 24px;}
 
 /* dialog  */
 .u-ico{width: 24px; height: 24px;}
-.u-ttl{font-size: 14px; line-height: 24px; height: 24px;  color: #fff; }
+.u-title{font-size: 14px; line-height: 24px; height: 24px;  color: #fff; cursor:default}
 
 /* nav box [com-type="navBox"]*/
-.g-nav{width:100%; height: 100%; background-color: #11b4ea;}
-.u-nav{padding: 0 10px}
+.g-nav{width:100%; height: 100%; background-color: #3f3f3f;}
+.u-nav{padding: 0 10px; background-color: rgba(247,247,247, 0.6)}
 .u-nav:hover{background-color: #3f3f3f}
 
 /* toolbox [com-type="toolBox"]*/
-.u-tlb{ height: 100%;}
-.u-tlb .g-ttl{overflow: hidden; height: 24px; background-color: #54cff8;}
-.g-ttl .u-ico{float: right; margin: auto 15px auto 0 }
+.u-toolbox{ height: 100%;}
+.u-toolbox .g-title{overflow: hidden; height: 24px; background-color: #54cff8;}
+.g-title .u-title{margin-left: 10px}
+.g-title .u-ico{float: right; margin: auto 15px auto 0 }
 
 /* tools */
 .g-fcg{ margin: 5px 0;}
-.g-fcg .u-ttl{ margin: 10px 0px 10px 15px; font-size: 12px}
+.g-fcg .u-title{ margin: 10px 0px 10px 15px; font-size: 12px}
 .u-fcg-el{width: 20px; height: 20px;}
 .u-fcg-el:hover{border: 1px solid #11b4ea; box-shadow:0 0 10px #06C; border-radius: 6px; }
 
 .g-ttl .u-ttl, .g-nav .u-nav{font-size: 14px; line-height: 24px; height: 24px;  color: #fff; float: left; margin-left: 15px; display: block; overflow: hidden; cursor: default}
 
 /* editbox [com-type="editBox"]*/
-.g-edbox{padding: 0; margin: 0;width: 99.5%; height: 99.5%}
-.g-edbox .m-text{width: 100%; height: 100%;}
-
-
+.m-panel .m-text{width: 100%; height: 931px;}
 
 /*function*/
 .f-drag{position: absolute}
 .f-drop{position: relative}
+.f-noselect{-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none; -ms-user-select: none;user-select: none;}
 
 
 

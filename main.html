@@ -8,59 +8,64 @@
         
         <link rel="stylesheet" type="text/css" href="stylesheets/dialog.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/patch.css" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/codemirror.css"/>
+        <link rel="stylesheet" type="text/css" href="thirdlibs/codemirror/lib/codemirror.css"/>
+        <link rel="stylesheet" type="text/css" href="thirdlibs/codemirror/addon/hint/show-hint.css"/>
         <script src="thirdlibs/mustache.js"></script>
         
     </head>
     
-    <body onscroll="return false">
-        <div class="g-frame" id="main-dialog">
-        <!-- header -->
-            <div class="g-header"></div>
+    <body>
+               <!-- header -->
+        <div class="g-header" id="frame-header"></div>
+        <div class="g-frame" id="frame-view">
         <!-- left tool area -->
-       <div class="g-sidebar">
+       <div class="g-sidebar f-noselect">
            
            <!-- left tool box -->
-         <div class="u-tlb" com-type="toolBox">
-            <div class="g-ttl f-cb">
-            <strong class="u-ttl">工具箱</strong>
+         <div class="u-toolbox" com-type="toolBox">
+            <div class="g-title f-cb">
+            <strong class="u-title">工具箱</strong>
             <div class="u-ico"><img src="ui/settings.png"/></div>
             </div>
             
-           </div> <!-- left tool box -->
-        </div> <!-- left tool area -->
+        </div> <!-- left tool box -->
+        </div> <!-- sidebar -->
         
         <!-- right area -->
-        <div class="g-content">
+        <div class="g-viewpanel">
             
-            <!-- nav area -->
-        <div class="g-ftop">
+         <div class="g-content" id="content">
+        
+        <div class="g-top f-noselect">
             <ul class="g-nav g-li f-cb" com-type="navBox">
                 <li class="u-nav">
-                    视图
+                    tab_page_1
                 </li>
                 
                 <li class="u-nav">
-                    帮助
+                    tab_page_2
                 </li>
             </ul>
         </div>
-            <div class="g-edbox" com-type="editBox">
-                <textarea class="m-text" placeholder="Code Edit Panel" id="mainedit"></textarea>
-            </div>
-            <div class="g-stabar">
+        <div class="g-panels" id="paneltabs">
+                <div class="m-panel">
+                <textarea class="m-text" id="editor" placeholder="Codeing..."></textarea>
+                </div>
+        </div>
+        <div class="g-stabar f-noselect">
             
             </div>
+              </div><!-- tab -->
         </div> <!-- right area -->
             <div class="g-flashbar">
             </div>
         </div><!-- frame -->
         <div class='dlg-frame'><div class='dlg-inner'></div></div>
         
-        <script src="thirdlibs/codemirror.min.js"></script>              
         <script src="thirdlibs/json2.js"></script>
         <script src="thirdlibs/jquery-1.11.1.min.js"></script>
+        <script src="thirdlibs/codemirror/lib/codemirror.js"></script>
         <script data-main="main" src="thirdlibs/require.js"></script>
-        
+  
     </body>
 </html>

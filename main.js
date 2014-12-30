@@ -12,50 +12,50 @@ define(["domReady!", "require"], function(domReady,require){
     "use strict";
     
     //init form size;
-
-    var winWidth, winHeight;
-    var $mainDialog = $("div#main-dialog");
-    var $navbox = $("[com-type='navBox']"), $toolArea = $("div.g-fleft"), $editArea = $("div.g-fright");
     
+    var winHeight;
+    var $mainview = $("[com-type='codepanel']"), $tabpanels = $("#paneltabs");
+    var eH = 0;
     function InitForm()
     {
         
     if(document.documentElement)
     {
-<<<<<<< HEAD
-        var clientWidth = document.documentElement.clientWidth;
-        var clientHeight = document.documentElement.clientHeight;
-       
-     
-        $mainDialog.height(clientHeight);
-       // $mainDialog.width(clientWidth); 
-   
-=======
-        var clientHeight = document.documentElement.clientHeight;
-        $mainDialog.height(clientHeight);
->>>>>>> origin/master
+        var clientHeight = document.documentElement.clientHeight - $("#frame-header").height();
+        $("#frame-view").height(clientHeight);
+        var eH = clientHeight - 48;
+        $tabpanels.height(eH);
     }
         
     };
     
-    InitForm();
     
     $(window).bind("resize", function(){
-<<<<<<< HEAD
     InitForm();
-=======
-     InitForm();
->>>>>>> origin/master
     });
         
-    var _edit = document.getElementById("mainedit");
-    var editor = CodeMirror.fromTextArea(_edit, {
-    lineNumbers: true,
-        height:600
-     });
-        require(["ext"]);
    
-
-
+     InitForm();
+        require(["ext"]);
+    
+        require([ 
+             "thirdlibs/codemirror/mode/css/css.js",
+             "thirdlibs/codemirror/addon/hint/html-hint.js",
+             "thirdlibs/codemirror/addon/hint/show-hint.js",
+             "thirdlibs/codemirror/addon/hint/javascript-hint.js",
+             "thirdlibs/codemirror/addon/hint/css-hint.js"
+            ], function(){
+            var _edit = document.getElementById("editor");
+            CodeMirror.fromTextArea(_edit, {
+            mode : "text/html", 
+            indentUnit : 2,  
+            smartIndent : true, 
+            tabSize : 4,  
+            readOnly : false,  
+            showCursorWhenSelecting : true,
+             lineNumbers : true   
+            });
+        });
+    
 
     });
