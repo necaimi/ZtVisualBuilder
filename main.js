@@ -22,6 +22,7 @@ define(["domReady!", "require"], function(domReady,require){
         
     if(document.documentElement)
     {
+<<<<<<< HEAD
         var clientWidth = document.documentElement.clientWidth;
         var clientHeight = document.documentElement.clientHeight;
        
@@ -29,6 +30,10 @@ define(["domReady!", "require"], function(domReady,require){
         $mainDialog.height(clientHeight);
        // $mainDialog.width(clientWidth); 
    
+=======
+        var clientHeight = document.documentElement.clientHeight;
+        $mainDialog.height(clientHeight);
+>>>>>>> origin/master
     }
         
     };
@@ -36,7 +41,11 @@ define(["domReady!", "require"], function(domReady,require){
     InitForm();
     
     $(window).bind("resize", function(){
+<<<<<<< HEAD
     InitForm();
+=======
+     InitForm();
+>>>>>>> origin/master
     });
         
     var _edit = document.getElementById("mainedit");
