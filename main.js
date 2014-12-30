@@ -36,26 +36,23 @@ define(["domReady!", "require"], function(domReady,require){
         
    
      InitForm();
-        require(["ext"]);
     
-        require([ 
-             "thirdlibs/codemirror/mode/css/css.js",
-             "thirdlibs/codemirror/addon/hint/html-hint.js",
-             "thirdlibs/codemirror/addon/hint/show-hint.js",
-             "thirdlibs/codemirror/addon/hint/javascript-hint.js",
-             "thirdlibs/codemirror/addon/hint/css-hint.js"
-            ], function(){
+    
             var _edit = document.getElementById("editor");
             CodeMirror.fromTextArea(_edit, {
-            mode : "text/html", 
             indentUnit : 2,  
             smartIndent : true, 
-            tabSize : 4,  
-            readOnly : false,  
+            tabSize : 4,
             showCursorWhenSelecting : true,
-             lineNumbers : true   
+            lineNumbers : true,
+            matchBrackets: true,
+            extraKeys: {"Ctrl-Space": "autocomplete"},
             });
-        });
+                
+                
+        require(["ext"]);
+
+      
     
 
     });
