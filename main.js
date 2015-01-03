@@ -40,13 +40,12 @@ define(["domReady!", "require"], function(domReady,require){
     
             var _edit = document.getElementById("editor");
             CodeMirror.fromTextArea(_edit, {
-            indentUnit : 2,  
-            smartIndent : true, 
-            tabSize : 4,
-            showCursorWhenSelecting : true,
+            modt:"text/html",
+            autoCloseTags: true,
             lineNumbers : true,
             matchBrackets: true,
-            extraKeys: {"Ctrl-Space": "autocomplete"},
+            autoCloseBrackets: true
+            
             });
                 
                 
