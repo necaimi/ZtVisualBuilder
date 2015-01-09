@@ -9,8 +9,7 @@ define(function(require, exports, module){
         Commands            = require("module/command/Commands"),
         CommandManager      = require("module/command/CommandManager"),
         ToolBox             = require("module/editor/ToolBox"),
-        Dialog              = require("module/dialog/Dialogs"),
-        AppInit             = require("module/utils/Init");
+        Dialog              = require("module/dialog/Dialogs");
         
     ToolBox.SetToolBoxOrin("[com-type='toolBox']");
     
