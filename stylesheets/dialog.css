@@ -3,18 +3,18 @@
 html,body{ margin: 0; padding: 0;height:100%; overflow: hidden;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;-o-user-select: none;user-select: none;cursor: default;-webkit-font-smoothing: antialiased;}
 
 /*frame*/
-.g-frame{*zoom:1;padding-left:180px; padding-right: 30px; height: 100%}
+.g-frame{*zoom:1;padding-left:180px; padding-right: 37px; height: 100%}
 .g-frame:after{display:block;visibility:hidden;clear:both;height:0;overflow:hidden;content:'.';}
 .g-sidebar, .g-viewpanel, .g-flashbar{float: left; display: inline; position: relative}
 .g-header{width: 100%; height: 0}
-.g-sidebar{ width:180px; height:100%;background-color: #393939; margin-left: -180px}
+.g-sidebar{ width:180px; height:100%;background-color: #393939; margin-left: -180px; overflow: hidden}
 
 .g-viewpanel{ width: 100%; height: 100%}
 .g-content{width: 100%; height: 100%}
 .g-content .g-panels{ height: 100%; width: 100%;}
 .g-content .g-top{width:100%; height: 24px; }
 .g-content .g-stabar{width: 100%; height: 24px; border-top: 1px; border-top-color: #252525; background-color: #3f3f3f;}
-.g-flashbar{height: 100%; width: 29px; background-color: #3f3f3f; margin-right:-31px; border-left:1px solid #212121; cursor: default}
+.g-flashbar{height: 100%; width: 36px; background-color: #3f3f3f; margin-right:-37px; border-left:1px solid #212121; cursor: default}
 
 .m-panel{height: 100%}
 /*tab*/

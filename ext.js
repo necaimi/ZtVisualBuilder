@@ -13,7 +13,7 @@ define(function(require, exports, module){
         
     ToolBox.SetToolBoxOrin("[com-type='toolBox']");
     
-    ToolBox.AddToolBox("编辑工具", ToolBox.ToolBoxList.EDIT_BOX),
+    ToolBox.AddToolBox("布局工具", ToolBox.ToolBoxList.EDIT_BOX),
     ToolBox.AddToolBox("模块工具", ToolBox.ToolBoxList.MODULE_BOX),
     ToolBox.AddToolBox("SKU工具", ToolBox.ToolBoxList.SKU_BOX);
     
