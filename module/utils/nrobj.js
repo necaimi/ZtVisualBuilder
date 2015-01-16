@@ -16,45 +16,72 @@
 })(function(){
     "use strict";
 
-    /*object, msg */
-    function _object(){
-        
+    /*namespace, base_object*/
+    function _nrobject(){
+        this.width = 0,
+        this.height= 0;
+        this.clientX = 0;
+        this.clientY = 0;
     };
     
-    function NRO(){
-        this._childs = [];
+    var nro_target = {}, _len = 0;
+    function NRO(obj){
+            
+        if(nro_target[obj] != null){
+           
+            return nro_target[obj];
+        }
+        
+        var _obj = new _nrobject();
+        nro_target[obj] = _obj;
+        return _obj;
     };
-
+    
+    NRO.nr = _nrobject.prototype;
     NRO.version = "1.0.0.1";
     return NRO;
     
 });
 
 /*msg*/
-(function(NR){
-    if(!NR){
+
+(function(NRO){
+    "use strict";
+    if(!NRO){
         return null;
     }
-    NR.MSG = {
+    
+    NRO.MSG = {
         "inited":"initlized",
         "cbd":"checkboundary",
         "drag":"drag",
         "move":"move"
     };
     
-    function MsgManager(){
-        this._msg = {};
-    }
-   
+
+    NRO.nr.bind = function(type, cfn){
+        NRO.Msgqueue[type] = {target:this, callfn:cfn};
+    };
+    
+    NRO.nr.unbind = function(type, cfn){
+        
+    };
+    
+    NRO.MsgManager = function(){
+        this.Msgqueue = {};
+        
+        this.trigger = function(type){
+            
+        };
+    };
    
 })(NRO);
 
-(function(){
-    function ss(){
-    this._oop = "tst";
-    return _oop;
-    }
-    return ss;
- });
-console.log(NRO, NRO._childs);
+function initedhandler(){
+    console.log("get inited");
+};
+    var nro = new NRO(".ooa");
+    nro.bind(NRO.MSG.inited, initedhandler);
+
+
 
