@@ -84,7 +84,7 @@
                 signalMap:"",
                 _connect:function(sender, signal, reciever, slot){
                     if(!sender || !signal || !reciever || !slot)
-                        throw new Error("#error(0x11): pointer is null");
+                        throw new Error("#error(0x18): pointer is null");
                     
                     var _idx = sender.findIdx(signal);
                     if(_idx){

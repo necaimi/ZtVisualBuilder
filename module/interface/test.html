@@ -12,12 +12,6 @@
     (function(){
         //init the privilege;
         
-        function abb(a){
-            console.log(abb);
-        };
-        
-        var func = abb();
-        
         var _core = ZtViual("011");
         var norobj = _core.metaObject(),
             norobj2 = _core.metaObject(),
@@ -26,7 +20,6 @@
         norobj.connect("signalHandler(type, obj)", norobj2, "Slot(type, obj)");
         
         norobj.emit("signalHandler", arg1, arg2);
-        
         
         
     })();
