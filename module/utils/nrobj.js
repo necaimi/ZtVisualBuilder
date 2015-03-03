@@ -6,7 +6,7 @@
 /*bs*/
 (function(m){
     if(typeof exports == "object" && typeof module  == "object"){
-        module.exports = m();
+        module.exports = m();  
     }else if(typeof define == "function" && define.amd){
         return define([], m);
     }else{
@@ -26,7 +26,7 @@
     
     var nro_target = {}, _len = 0;
     function NRO(obj){
-            
+            console.log(this);
         if(nro_target[obj] != null){
            
             return nro_target[obj];
@@ -80,7 +80,10 @@
 function initedhandler(){
     console.log("get inited");
 };
-    var nro = new NRO(".ooa");
+
+
+    var nro = NRO(".ooa");
+    
     nro.bind(NRO.MSG.inited, initedhandler);
 
 
